@@ -3,9 +3,47 @@
   "name": "QindaFox Agent",
   "version": "0.1.0",
   "description": "Grounded Firefox/QindaFox control for local agents, with optional Jev decisions.",
-  "browser_specific_settings": {"gecko": {"id": "agent@qindafox.local", "strict_min_version": "115.0"}},
-  "permissions": ["nativeMessaging", "tabs", "<all_urls>", "webNavigation", "storage"],
-  "background": {"scripts": ["background.js"], "persistent": true},
-  "browser_action": {"default_title": "QindaFox Agent: click to pause/resume"},
-  "content_scripts": [{"matches": ["http://*/*", "https://*/*", "file:///*"], "js": ["content.js"], "all_frames": true, "match_about_blank": true, "run_at": "document_idle"}]
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "agent@qindafox.local",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "browsingActivity",
+          "websiteContent"
+        ]
+      }
+    }
+  },
+  "permissions": [
+    "nativeMessaging",
+    "tabs",
+    "<all_urls>",
+    "webNavigation",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "QindaFox Agent: click to pause/resume"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_idle"
+    }
+  ]
 }

@@ -71,7 +71,7 @@ class Jev:
         if len(data) > 64000:
             raise ValueError('Jev request exceeds 64KB budget; narrow the observation')
         if not self.proc or self.proc.poll() is not None:
-            remote = os.environ.get('QINDAFOX_JEV_HOST', 'qinda')
+            remote = os.environ.get('QINDAFOX_JEV_HOST', 'local' if socket.gethostname().split('.')[0] == 'qinda' else 'qinda')
             remote_script = 'work_SPaC3/QindaFoxAgent/plugins/qindafox-browser/scripts/jev_remote.py'
             command = [sys.executable, str(Path(__file__).with_name('jev_remote.py'))] if remote == 'local' else ['ssh','-T','-o','BatchMode=yes','-o','ConnectTimeout=5',remote,'python3',remote_script]
             self.proc = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)

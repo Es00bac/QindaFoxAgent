@@ -1,6 +1,6 @@
 {
   "name": "qindafox-browser",
-  "version": "0.1.0",
+  "version": "0.1.0+codex.20260926215826",
   "description": "Firefox/QindaFox browser control with compact observations, checked actions, MCP, and fast Jev decisions.",
   "author": {
     "name": "QindaQt"

@@ -12,7 +12,7 @@ def main():
     home = Path.home()
     bindir = home / '.local/bin'
     bindir.mkdir(parents=True,exist_ok=True)
-    for name,script,args in [('qindafox-agent-host','native_host.py',''),('qindafox-agent','browser.py',''),('qindafox-agent-mcp','browser.py','mcp')]:
+    for name,script,args in [('qindafox-agent-host','native_host.py',''),('qindafox-agent','browser.py',''),('qindafox-agent-mcp','browser.py','mcp'),('qindafox-agent-launch','launch.py','')]:
         path = bindir / name
         path.write_text('#!/bin/sh\nexec python3 ' + shlex.quote(str(root / 'scripts' / script)) + (' '+args if args else '') + ' "$@"\n')
         path.chmod(0o700)

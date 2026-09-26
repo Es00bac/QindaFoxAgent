@@ -1,10 +1,10 @@
 {
   "mcpServers": {
     "qindafox-browser": {
-      "command": "python3",
+      "command": "/bin/sh",
       "args": [
-        "${PLUGIN_ROOT}/scripts/browser.py",
-        "mcp"
+        "-c",
+        "exec \"$HOME/.local/bin/qindafox-agent-mcp\""
       ]
     }
   }
