@@ -1,0 +1,267 @@
+{
+  "total": 40,
+  "saved": [
+    {
+      "id": "RQ-1018",
+      "category": "incident",
+      "urgency": "critical",
+      "team": "engineering"
+    },
+    {
+      "id": "RQ-1034",
+      "category": "howto",
+      "urgency": "low",
+      "team": "enablement"
+    },
+    {
+      "id": "RQ-1033",
+      "category": "howto",
+      "urgency": "low",
+      "team": "enablement"
+    },
+    {
+      "id": "RQ-1027",
+      "category": "feature",
+      "urgency": "low",
+      "team": "product"
+    },
+    {
+      "id": "RQ-1015",
+      "category": "access",
+      "urgency": "low",
+      "team": "identity"
+    },
+    {
+      "id": "RQ-1032",
+      "category": "feature",
+      "urgency": "low",
+      "team": "product"
+    },
+    {
+      "id": "RQ-1017",
+      "category": "incident",
+      "urgency": "critical",
+      "team": "engineering"
+    },
+    {
+      "id": "RQ-1002",
+      "category": "billing",
+      "urgency": "normal",
+      "team": "accounts"
+    },
+    {
+      "id": "RQ-1037",
+      "category": "howto",
+      "urgency": "low",
+      "team": "enablement"
+    },
+    {
+      "id": "RQ-1019",
+      "category": "incident",
+      "urgency": "normal",
+      "team": "engineering"
+    },
+    {
+      "id": "RQ-1012",
+      "category": "access",
+      "urgency": "low",
+      "team": "identity"
+    },
+    {
+      "id": "RQ-1038",
+      "category": "howto",
+      "urgency": "low",
+      "team": "enablement"
+    },
+    {
+      "id": "RQ-1010",
+      "category": "access",
+      "urgency": "normal",
+      "team": "identity"
+    },
+    {
+      "id": "RQ-1036",
+      "category": "howto",
+      "urgency": "low",
+      "team": "enablement"
+    },
+    {
+      "id": "RQ-1006",
+      "category": "billing",
+      "urgency": "normal",
+      "team": "accounts"
+    },
+    {
+      "id": "RQ-1040",
+      "category": "howto",
+      "urgency": "low",
+      "team": "enablement"
+    },
+    {
+      "id": "RQ-1016",
+      "category": "access",
+      "urgency": "normal",
+      "team": "identity"
+    },
+    {
+      "id": "RQ-1025",
+      "category": "feature",
+      "urgency": "low",
+      "team": "product"
+    },
+    {
+      "id": "RQ-1020",
+      "category": "incident",
+      "urgency": "normal",
+      "team": "engineering"
+    },
+    {
+      "id": "RQ-1005",
+      "category": "billing",
+      "urgency": "low",
+      "team": "accounts"
+    },
+    {
+      "id": "RQ-1029",
+      "category": "feature",
+      "urgency": "low",
+      "team": "product"
+    },
+    {
+      "id": "RQ-1022",
+      "category": "incident",
+      "urgency": "normal",
+      "team": "engineering"
+    },
+    {
+      "id": "RQ-1001",
+      "category": "billing",
+      "urgency": "normal",
+      "team": "accounts"
+    },
+    {
+      "id": "RQ-1026",
+      "category": "feature",
+      "urgency": "low",
+      "team": "product"
+    },
+    {
+      "id": "RQ-1007",
+      "category": "billing",
+      "urgency": "low",
+      "team": "accounts"
+    },
+    {
+      "id": "RQ-1023",
+      "category": "incident",
+      "urgency": "low",
+      "team": "engineering"
+    },
+    {
+      "id": "RQ-1030",
+      "category": "feature",
+      "urgency": "low",
+      "team": "product"
+    },
+    {
+      "id": "RQ-1024",
+      "category": "incident",
+      "urgency": "critical",
+      "team": "engineering"
+    },
+    {
+      "id": "RQ-1008",
+      "category": "billing",
+      "urgency": "normal",
+      "team": "accounts"
+    },
+    {
+      "id": "RQ-1039",
+      "category": "howto",
+      "urgency": "low",
+      "team": "enablement"
+    },
+    {
+      "id": "RQ-1021",
+      "category": "incident",
+      "urgency": "critical",
+      "team": "engineering"
+    },
+    {
+      "id": "RQ-1011",
+      "category": "access",
+      "urgency": "normal",
+      "team": "identity"
+    },
+    {
+      "id": "RQ-1003",
+      "category": "billing",
+      "urgency": "low",
+      "team": "accounts"
+    },
+    {
+      "id": "RQ-1031",
+      "category": "feature",
+      "urgency": "low",
+      "team": "product"
+    },
+    {
+      "id": "RQ-1009",
+      "category": "access",
+      "urgency": "critical",
+      "team": "identity"
+    },
+    {
+      "id": "RQ-1004",
+      "category": "billing",
+      "urgency": "normal",
+      "team": "accounts"
+    },
+    {
+      "id": "RQ-1035",
+      "category": "howto",
+      "urgency": "low",
+      "team": "enablement"
+    },
+    {
+      "id": "RQ-1028",
+      "category": "feature",
+      "urgency": "low",
+      "team": "product"
+    },
+    {
+      "id": "RQ-1014",
+      "category": "access",
+      "urgency": "critical",
+      "team": "identity"
+    },
+    {
+      "id": "RQ-1013",
+      "category": "access",
+      "urgency": "normal",
+      "team": "identity"
+    }
+  ],
+  "current": null,
+  "complete": true,
+  "metrics": {
+    "actions": 160,
+    "calls": 40,
+    "inputTokens": 23287,
+    "elapsedSeconds": 146.144,
+    "correct": 40,
+    "verifiedSaves": 40,
+    "semanticJudgments": 80,
+    "requestBytes": 57325,
+    "modelApiSeconds": 6.336,
+    "assistedRecords": 1,
+    "usageComplete": false,
+    "scope": "Synthetic 40-ticket queue; fixed form workflow; live Jev classifications and real extension actions; not a production benchmark",
+    "timing": "Includes the low-confidence pause and agent recovery, initial SSH setup, model requests, observations, actions, verification, and per-ticket screenshot capture. Excludes demo construction, browser startup, and replay rendering.",
+    "observationsLastSegment": 121,
+    "usageNote": "Recorded token/API-time/byte totals exclude the first rejected request, whose usage was not persisted. Request count includes it."
+  },
+  "elapsed": 146.141615918983,
+  "correct": 40,
+  "mismatches": []
+}

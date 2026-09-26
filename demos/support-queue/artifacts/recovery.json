@@ -1,0 +1,14 @@
+{
+  "ticket": "RQ-1016",
+  "rejectedConfidence": 0.57,
+  "completedBeforePause": 16,
+  "secondsAtLastSavedReceipt": 6.03,
+  "assistedResolution": {
+    "category": "access",
+    "urgency": "normal",
+    "team": "identity"
+  },
+  "screenshotGapSeconds": 131.463,
+  "highlightHoldSeconds": 2,
+  "note": "Condensed replay shortens this recovery gap only. Full replay preserves original screenshot timing. First 17 frame times recovered from image file timestamps after initial runner exited."
+}

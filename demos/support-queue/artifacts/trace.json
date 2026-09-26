@@ -1,0 +1,904 @@
+[
+  {
+    "id": "RQ-1018",
+    "request": "Saved customer records are disappearing continuously from our production database. Data loss is ongoing.",
+    "decision": {
+      "Category": "incident",
+      "Urgency": "critical",
+      "Assigned team": "engineering"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1478,
+      "totalMs": 665.4,
+      "apiMs": 267.0,
+      "usage": {
+        "input_tokens": 595,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 0.718
+  },
+  {
+    "id": "RQ-1034",
+    "request": "Please explain how to use the existing date filter on the dashboard. Nothing is failing.",
+    "decision": {
+      "Category": "howto",
+      "Urgency": "low",
+      "Assigned team": "enablement"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1462,
+      "totalMs": 140.8,
+      "apiMs": 133.6,
+      "usage": {
+        "input_tokens": 596,
+        "output_tokens": 90
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 1.019
+  },
+  {
+    "id": "RQ-1033",
+    "request": "Where can I find the existing user guide for creating a project? I am learning the product.",
+    "decision": {
+      "Category": "howto",
+      "Urgency": "low",
+      "Assigned team": "enablement"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1465,
+      "totalMs": 231.6,
+      "apiMs": 223.6,
+      "usage": {
+        "input_tokens": 598,
+        "output_tokens": 90
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 1.411
+  },
+  {
+    "id": "RQ-1027",
+    "request": "Could a future version support recurring project templates? This is an enhancement idea.",
+    "decision": {
+      "Category": "feature",
+      "Urgency": "low",
+      "Assigned team": "product"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1462,
+      "totalMs": 155.1,
+      "apiMs": 146.4,
+      "usage": {
+        "input_tokens": 594,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 1.727
+  },
+  {
+    "id": "RQ-1015",
+    "request": "How can I view the devices currently signed into my account? There is no suspected breach.",
+    "decision": {
+      "Category": "access",
+      "Urgency": "low",
+      "Assigned team": "identity"
+    },
+    "confidence": 0.94,
+    "metrics": {
+      "requestBytes": 1464,
+      "totalMs": 118.6,
+      "apiMs": 108.7,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 2.005
+  },
+  {
+    "id": "RQ-1032",
+    "request": "Could you add keyboard shortcuts for switching between projects? This is a nice-to-have feature.",
+    "decision": {
+      "Category": "feature",
+      "Urgency": "low",
+      "Assigned team": "product"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1470,
+      "totalMs": 188.1,
+      "apiMs": 182.4,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 2.354
+  },
+  {
+    "id": "RQ-1017",
+    "request": "All production API requests return 503. Every customer is unable to use the service. This is a complete outage.",
+    "decision": {
+      "Category": "incident",
+      "Urgency": "critical",
+      "Assigned team": "engineering"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1485,
+      "totalMs": 235.1,
+      "apiMs": 215.1,
+      "usage": {
+        "input_tokens": 604,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 2.751
+  },
+  {
+    "id": "RQ-1002",
+    "request": "Our paid invoice still shows overdue and the account has been suspended. Please reconcile the payment.",
+    "decision": {
+      "Category": "billing",
+      "Urgency": "normal",
+      "Assigned team": "accounts"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1476,
+      "totalMs": 248.7,
+      "apiMs": 165.6,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 3.16
+  },
+  {
+    "id": "RQ-1037",
+    "request": "I need instructions for scheduling an existing weekly summary. The feature already exists.",
+    "decision": {
+      "Category": "howto",
+      "Urgency": "low",
+      "Assigned team": "enablement"
+    },
+    "confidence": 0.99,
+    "metrics": {
+      "requestBytes": 1464,
+      "totalMs": 124.7,
+      "apiMs": 119.4,
+      "usage": {
+        "input_tokens": 594,
+        "output_tokens": 90
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 3.448
+  },
+  {
+    "id": "RQ-1019",
+    "request": "The CSV export crashes on one specific report. The rest of the application and other exports work.",
+    "decision": {
+      "Category": "incident",
+      "Urgency": "normal",
+      "Assigned team": "engineering"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1472,
+      "totalMs": 165.8,
+      "apiMs": 129.4,
+      "usage": {
+        "input_tokens": 598,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 3.774
+  },
+  {
+    "id": "RQ-1012",
+    "request": "I would like instructions for enabling two-factor authentication. My account works normally.",
+    "decision": {
+      "Category": "access",
+      "Urgency": "low",
+      "Assigned team": "identity"
+    },
+    "confidence": 0.99,
+    "metrics": {
+      "requestBytes": 1466,
+      "totalMs": 145.6,
+      "apiMs": 126.7,
+      "usage": {
+        "input_tokens": 594,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 4.081
+  },
+  {
+    "id": "RQ-1038",
+    "request": "Where is the documentation for the existing webhook setup? I am exploring it for a future project.",
+    "decision": {
+      "Category": "howto",
+      "Urgency": "low",
+      "Assigned team": "enablement"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1472,
+      "totalMs": 148.0,
+      "apiMs": 118.8,
+      "usage": {
+        "input_tokens": 598,
+        "output_tokens": 90
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 4.391
+  },
+  {
+    "id": "RQ-1010",
+    "request": "My password reset link has expired three times and I cannot sign in to my own account.",
+    "decision": {
+      "Category": "access",
+      "Urgency": "normal",
+      "Assigned team": "identity"
+    },
+    "confidence": 0.99,
+    "metrics": {
+      "requestBytes": 1460,
+      "totalMs": 248.3,
+      "apiMs": 185.8,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 4.797
+  },
+  {
+    "id": "RQ-1036",
+    "request": "How do I rename a project using the current interface? This is a routine usage question.",
+    "decision": {
+      "Category": "howto",
+      "Urgency": "low",
+      "Assigned team": "enablement"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1462,
+      "totalMs": 230.2,
+      "apiMs": 155.9,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 90
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 5.187
+  },
+  {
+    "id": "RQ-1006",
+    "request": "We upgraded yesterday but the invoice charged us for two different plans. Please fix the charge.",
+    "decision": {
+      "Category": "billing",
+      "Urgency": "normal",
+      "Assigned team": "accounts"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1470,
+      "totalMs": 283.7,
+      "apiMs": 277.8,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 5.63
+  },
+  {
+    "id": "RQ-1040",
+    "request": "Please point me to the tutorial for organizing existing reports into folders. No issue or deadline.",
+    "decision": {
+      "Category": "howto",
+      "Urgency": "low",
+      "Assigned team": "enablement"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1473,
+      "totalMs": 237.5,
+      "apiMs": 132.7,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 90
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "atSeconds": 6.03
+  },
+  {
+    "id": "RQ-1016",
+    "request": "The single sign-on login loops back to the sign-in page for my user. Other team members can sign in.",
+    "decision": {
+      "Category": "access",
+      "Urgency": "normal",
+      "Assigned team": "identity"
+    },
+    "confidence": null,
+    "metrics": {
+      "requestBytes": null,
+      "apiMs": null,
+      "totalMs": null,
+      "usage": null,
+      "note": "Earlier rejected Jev call had confidence 0.57. Its usage was not captured by the initial runner. Agent resolved this record without another model request."
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": true,
+    "atSeconds": 137.489
+  },
+  {
+    "id": "RQ-1025",
+    "request": "Please consider adding a dark theme in a future release. The current app works fine.",
+    "decision": {
+      "Category": "feature",
+      "Urgency": "low",
+      "Assigned team": "product"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1458,
+      "totalMs": 572.7,
+      "apiMs": 222.1,
+      "usage": {
+        "input_tokens": 596,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 138.235
+  },
+  {
+    "id": "RQ-1020",
+    "request": "Uploading a valid PNG always shows an internal server error in our project. Other features are working.",
+    "decision": {
+      "Category": "incident",
+      "Urgency": "normal",
+      "Assigned team": "engineering"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1477,
+      "totalMs": 144.8,
+      "apiMs": 137.2,
+      "usage": {
+        "input_tokens": 601,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 138.554
+  },
+  {
+    "id": "RQ-1005",
+    "request": "We need the company address corrected on the next invoice. This is not blocking anything.",
+    "decision": {
+      "Category": "billing",
+      "Urgency": "low",
+      "Assigned team": "accounts"
+    },
+    "confidence": 0.98,
+    "metrics": {
+      "requestBytes": 1463,
+      "totalMs": 118.5,
+      "apiMs": 110.7,
+      "usage": {
+        "input_tokens": 596,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 138.75
+  },
+  {
+    "id": "RQ-1029",
+    "request": "Please add the ability to customize chart colors in a later release. This is optional for us.",
+    "decision": {
+      "Category": "feature",
+      "Urgency": "low",
+      "Assigned team": "product"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1467,
+      "totalMs": 154.9,
+      "apiMs": 138.0,
+      "usage": {
+        "input_tokens": 598,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 139.079
+  },
+  {
+    "id": "RQ-1022",
+    "request": "The weekly report produces the wrong total after I apply a date filter. This looks like a calculation bug.",
+    "decision": {
+      "Category": "incident",
+      "Urgency": "normal",
+      "Assigned team": "engineering"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1480,
+      "totalMs": 153.5,
+      "apiMs": 138.3,
+      "usage": {
+        "input_tokens": 600,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 139.401
+  },
+  {
+    "id": "RQ-1001",
+    "request": "We were charged twice for the same monthly subscription. Please reverse the duplicate charge.",
+    "decision": {
+      "Category": "billing",
+      "Urgency": "normal",
+      "Assigned team": "accounts"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1467,
+      "totalMs": 120.5,
+      "apiMs": 116.5,
+      "usage": {
+        "input_tokens": 595,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 139.689
+  },
+  {
+    "id": "RQ-1026",
+    "request": "We would love a native calendar integration as a new feature. There is no deadline or current blocker.",
+    "decision": {
+      "Category": "feature",
+      "Urgency": "low",
+      "Assigned team": "product"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1476,
+      "totalMs": 224.0,
+      "apiMs": 136.7,
+      "usage": {
+        "input_tokens": 599,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 140.077
+  },
+  {
+    "id": "RQ-1007",
+    "request": "Can you explain the tax line on our latest invoice? We are not disputing it and there is no deadline.",
+    "decision": {
+      "Category": "billing",
+      "Urgency": "low",
+      "Assigned team": "accounts"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1475,
+      "totalMs": 347.9,
+      "apiMs": 269.2,
+      "usage": {
+        "input_tokens": 603,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 140.593
+  },
+  {
+    "id": "RQ-1023",
+    "request": "There is a cosmetic alignment bug in the footer. All workflows work and there is no urgency.",
+    "decision": {
+      "Category": "incident",
+      "Urgency": "low",
+      "Assigned team": "engineering"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1466,
+      "totalMs": 263.2,
+      "apiMs": 235.8,
+      "usage": {
+        "input_tokens": 598,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 141.029
+  },
+  {
+    "id": "RQ-1030",
+    "request": "We would like a new public API endpoint for custom tags someday. Our current workflow is working.",
+    "decision": {
+      "Category": "feature",
+      "Urgency": "low",
+      "Assigned team": "product"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1471,
+      "totalMs": 216.6,
+      "apiMs": 143.7,
+      "usage": {
+        "input_tokens": 598,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 141.409
+  },
+  {
+    "id": "RQ-1024",
+    "request": "The production sync service is actively deleting existing files unexpectedly. Please stop the ongoing data loss.",
+    "decision": {
+      "Category": "incident",
+      "Urgency": "critical",
+      "Assigned team": "engineering"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1486,
+      "totalMs": 141.5,
+      "apiMs": 128.9,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 141.714
+  },
+  {
+    "id": "RQ-1008",
+    "request": "Our cancellation was confirmed but another renewal payment was taken. Please review the charge.",
+    "decision": {
+      "Category": "billing",
+      "Urgency": "normal",
+      "Assigned team": "accounts"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1469,
+      "totalMs": 145.0,
+      "apiMs": 109.2,
+      "usage": {
+        "input_tokens": 595,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 142.021
+  },
+  {
+    "id": "RQ-1039",
+    "request": "How do I change the language displayed in my personal preferences? Everything is working normally.",
+    "decision": {
+      "Category": "howto",
+      "Urgency": "low",
+      "Assigned team": "enablement"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1472,
+      "totalMs": 142.6,
+      "apiMs": 119.0,
+      "usage": {
+        "input_tokens": 596,
+        "output_tokens": 90
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 142.33
+  },
+  {
+    "id": "RQ-1021",
+    "request": "The entire production website has been unavailable for twenty minutes and all users are affected.",
+    "decision": {
+      "Category": "incident",
+      "Urgency": "critical",
+      "Assigned team": "engineering"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1471,
+      "totalMs": 245.1,
+      "apiMs": 193.8,
+      "usage": {
+        "input_tokens": 595,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 142.742
+  },
+  {
+    "id": "RQ-1011",
+    "request": "I replaced my phone and lost my authenticator codes. I cannot pass the two-factor login screen.",
+    "decision": {
+      "Category": "access",
+      "Urgency": "normal",
+      "Assigned team": "identity"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1469,
+      "totalMs": 158.4,
+      "apiMs": 140.5,
+      "usage": {
+        "input_tokens": 600,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 143.064
+  },
+  {
+    "id": "RQ-1003",
+    "request": "Please send a PDF copy of the invoice from last month for our records. Everything is working.",
+    "decision": {
+      "Category": "billing",
+      "Urgency": "low",
+      "Assigned team": "accounts"
+    },
+    "confidence": 0.99,
+    "metrics": {
+      "requestBytes": 1467,
+      "totalMs": 234.0,
+      "apiMs": 144.1,
+      "usage": {
+        "input_tokens": 598,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 143.467
+  },
+  {
+    "id": "RQ-1031",
+    "request": "An offline reading mode would be useful for travel. Please consider it for the product roadmap.",
+    "decision": {
+      "Category": "feature",
+      "Urgency": "low",
+      "Assigned team": "product"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1469,
+      "totalMs": 342.4,
+      "apiMs": 246.7,
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 143.972
+  },
+  {
+    "id": "RQ-1009",
+    "request": "An unknown person changed our administrator email and is actively logging in. We believe the account is compromised.",
+    "decision": {
+      "Category": "access",
+      "Urgency": "critical",
+      "Assigned team": "identity"
+    },
+    "confidence": 0.98,
+    "metrics": {
+      "requestBytes": 1490,
+      "totalMs": 138.7,
+      "apiMs": 118.0,
+      "usage": {
+        "input_tokens": 599,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 144.276
+  },
+  {
+    "id": "RQ-1004",
+    "request": "The card update page rejects our replacement company card, so we cannot renew the subscription.",
+    "decision": {
+      "Category": "billing",
+      "Urgency": "normal",
+      "Assigned team": "accounts"
+    },
+    "confidence": 0.67,
+    "metrics": {
+      "requestBytes": 1469,
+      "totalMs": 245.9,
+      "apiMs": 171.3,
+      "usage": {
+        "input_tokens": 596,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 144.682
+  },
+  {
+    "id": "RQ-1035",
+    "request": "What are the steps to export an existing report as PDF? I only need instructions.",
+    "decision": {
+      "Category": "howto",
+      "Urgency": "low",
+      "Assigned team": "enablement"
+    },
+    "confidence": 0.99,
+    "metrics": {
+      "requestBytes": 1455,
+      "totalMs": 145.1,
+      "apiMs": 125.9,
+      "usage": {
+        "input_tokens": 596,
+        "output_tokens": 90
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 144.991
+  },
+  {
+    "id": "RQ-1028",
+    "request": "Feature suggestion: let us pin favorite reports to the dashboard. Nothing is broken.",
+    "decision": {
+      "Category": "feature",
+      "Urgency": "low",
+      "Assigned team": "product"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1458,
+      "totalMs": 158.1,
+      "apiMs": 150.6,
+      "usage": {
+        "input_tokens": 595,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 145.316
+  },
+  {
+    "id": "RQ-1014",
+    "request": "We found an unauthorized administrator session and the attacker is changing account permissions right now.",
+    "decision": {
+      "Category": "access",
+      "Urgency": "critical",
+      "Assigned team": "identity"
+    },
+    "confidence": 0.8,
+    "metrics": {
+      "requestBytes": 1480,
+      "totalMs": 230.1,
+      "apiMs": 201.8,
+      "usage": {
+        "input_tokens": 595,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 145.708
+  },
+  {
+    "id": "RQ-1013",
+    "request": "Our new colleague accepted an invitation but receives access denied when opening the workspace.",
+    "decision": {
+      "Category": "access",
+      "Urgency": "normal",
+      "Assigned team": "identity"
+    },
+    "confidence": 1.0,
+    "metrics": {
+      "requestBytes": 1469,
+      "totalMs": 247.9,
+      "apiMs": 149.3,
+      "usage": {
+        "input_tokens": 594,
+        "output_tokens": 89
+      }
+    },
+    "actions": 4,
+    "verifiedSave": true,
+    "agentAssisted": false,
+    "atSeconds": 146.119
+  }
+]
