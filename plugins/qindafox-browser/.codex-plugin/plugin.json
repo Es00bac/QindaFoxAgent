@@ -1,0 +1,25 @@
+{
+  "name": "qindafox-browser",
+  "version": "0.1.0",
+  "description": "Firefox/QindaFox browser control with compact observations, checked actions, MCP, and fast Jev decisions.",
+  "author": {
+    "name": "QindaQt"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "QindaFox Browser",
+    "shortDescription": "Control Firefox and QindaFox with Jev",
+    "longDescription": "Use the current browser through a native extension, with grounded references, frames, screenshots, and compact Jev decisions over qinda.",
+    "developerName": "QindaQt",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use QindaFox to complete this browser task."
+    ]
+  },
+  "mcpServers": "./.mcp.json",
+  "license": "MIT"
+}

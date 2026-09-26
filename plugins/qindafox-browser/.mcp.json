@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "qindafox-browser": {
+      "command": "python3",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/scripts/browser.py",
+        "mcp"
+      ]
+    }
+  }
+}
