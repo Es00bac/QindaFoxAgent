@@ -9,6 +9,7 @@ import socket
 import subprocess
 import sys
 import time
+from urllib.parse import urlsplit
 from native_host import runtime_dir, MAX_FRAME
 
 
@@ -60,6 +61,9 @@ class Jev:
                 self.proc.wait(timeout=2)
             except subprocess.TimeoutExpired:
                 self.proc.kill()
+                self.proc.wait()
+            self.proc.stdin.close()
+            self.proc.stdout.close()
             self.proc = None
 
     def request(self, payload):
@@ -92,9 +96,13 @@ class Jev:
 def suggestion_payload(goal, observation, history=None):
     if not isinstance(goal, str) or not goal.strip() or len(goal) > 4000:
         raise ValueError('goal must be 1–4000 characters')
-    elements = [e for e in observation['elements'] if not e['disabled'] and not e['sensitive']]
+    elements = [dict(e) for e in observation['elements'] if not e['disabled'] and not e['sensitive']]
+    for e in elements:
+        # fill/select focus their controls; avoid an unnecessary click and model call.
+        if 'fill' in e['actions'] or 'select' in e['actions']:
+            e['actions'] = [a for a in e['actions'] if a != 'click']
     # Compact integer targets; full UUID refs remain local and are joined back after inference.
-    compact = [{k:v for k,v in e.items() if k not in ('ref','disabled','sensitive','actions','href','options','value')} | {'id':str(i+1),'actions':e['actions']} for i,e in enumerate(elements)]
+    compact = [{k:v for k,v in e.items() if k not in ('ref','disabled','sensitive','actions','href','options','value')} | {'id':str(i+1),'actions':e['actions'],'hasValue':bool(e.get('value'))} for i,e in enumerate(elements)]
     operations = {'scroll_down':'Scroll down to find more controls', 'scroll_up':'Scroll up', 'wait':'Page is still loading; wait briefly', 'done':'Goal appears satisfied; caller must verify', 'blocked':'Cannot proceed within the stated goal'}
     questions = {}
     for action in ('click','fill','select','check'):
@@ -115,6 +123,8 @@ class Browser:
         params = dict(params)
         if method == 'sessions':
             return sessions()
+        if method == 'run':
+            return self.run(params)
         path = choose_session(params.pop('session', None))
         if method == 'suggest':
             goal = params.pop('goal')
@@ -144,6 +154,97 @@ class Browser:
             return {'proposal':proposed,'confidence':confidence,'reviewRequired':True,'metrics':metrics,'document':observation['document'],'note':'Suggestion only. Caller checks authorization, supplies text, executes, and verifies.'}
         return rpc(path,method,params)
 
+    def run(self, params):
+        """Bounded micro-loop. Exact control names define the delegated scope."""
+        goal = params['goal']
+        target = {k:params[k] for k in ('session','tabId','frameId') if k in params}
+        path = choose_session(target.get('session'))
+        origins = params.get('allowedOrigins',[])
+        if not origins or not params.get('successText') and not params.get('successUrlIncludes'):
+            raise ValueError('run requires allowedOrigins and a deterministic successText or successUrlIncludes')
+        limit = max(1,min(int(params.get('maxSteps',8)),12))
+        budget = max(1000,min(int(params.get('maxRequestBytes',96000)),256000))
+        threshold = max(0,min(float(params.get('minConfidence',.7)),1))
+        deadline = time.monotonic() + max(5,min(int(params.get('timeoutSeconds',60)),180))
+        history, trace, seen, used = [], [], {}, 0
+        started = time.perf_counter()
+        def finish(status, **extra):
+            return {'status':status,'steps':trace,'requestBytes':used,'elapsedMs':round((time.perf_counter()-started)*1000,1),**extra}
+        for _ in range(limit):
+            if time.monotonic() >= deadline:
+                return finish('time_budget')
+            page = rpc(path,'observe',{**target,'viewportOnly':True,'maxElements':80,'maxText':4500})
+            url = urlsplit(page['url'])
+            origin = f'{url.scheme}://{url.netloc}'
+            if origin not in origins:
+                return finish('origin_boundary',url=page['url'])
+            if (not params.get('successText') or params['successText'] in page['text']) and (not params.get('successUrlIncludes') or params['successUrlIncludes'] in page['url']):
+                return finish('verified',url=page['url'])
+            payload, elements = suggestion_payload(goal,page,history)
+            size = len(json.dumps(payload,separators=(',',':')).encode())+1
+            if used + size > budget:
+                return finish('request_budget')
+            result, metrics = self.jev.request(payload)
+            used += metrics['requestBytes']
+            answers = result['response']['answers']
+            op = answers['operation']['choice']
+            if op not in payload['questions']['operation']['criteria']:
+                return finish('invalid_decision')
+            confidence = answers['operation'].get('confidence',0)
+            action = {**target,'action':op}
+            label = ''
+            if op in ('click','fill','select','check'):
+                answer = answers[op+'_target']
+                key = str(answer['choice'])
+                if key not in payload['questions'][op+'_target']['criteria']:
+                    return finish('invalid_target')
+                e = elements[int(key)-1]
+                label = e['name']
+                confidence = min(confidence,answer.get('confidence',0))
+                action['ref'] = e['ref']
+                if op == 'click' and label not in params.get('allowedClickNames',[]):
+                    return finish('scope_boundary',proposedAction=op,target=label)
+                if op in ('fill','select','check'):
+                    values = params.get('values',{})
+                    if label not in values:
+                        return finish('needs_value',proposedAction=op,target=label)
+                    action[{'fill':'text','select':'value','check':'checked'}[op]] = values[label]
+                # Names must identify exactly one visible compatible control.
+                if sum(x['name']==label and op in x['actions'] for x in elements) != 1:
+                    return finish('ambiguous_target',target=label)
+                if op == 'click' and e.get('href'):
+                    dest = urlsplit(e['href'])
+                    if f'{dest.scheme}://{dest.netloc}' not in origins:
+                        return finish('origin_boundary',target=label)
+            if confidence < threshold:
+                return finish('low_confidence',confidence=confidence,proposedAction=op,target=label)
+            if time.monotonic() >= deadline:
+                return finish('time_budget')
+            signature = json.dumps([op,label,page['url'],page['text']],sort_keys=True)
+            seen[signature] = seen.get(signature,0)+1
+            if seen[signature] > 2:
+                return finish('no_progress')
+            trace.append({'operation':op,'target':label,'confidence':confidence,'metrics':metrics})
+            if op in ('done','blocked'):
+                return finish('unverified_done' if op=='done' else 'blocked')
+            if op in ('scroll_down','scroll_up'):
+                action.update(action='scroll',amount=650 if op=='scroll_down' else -650)
+            if op == 'wait':
+                time.sleep(.15)
+                continue
+            try:
+                rpc(path,'act',action)
+            except (OSError,RuntimeError) as error:
+                return finish('action_uncertain',error=str(error))
+            history.append(f'{op} {label}')
+            time.sleep(.08)
+        # An action on the final allowed step can itself satisfy the goal.
+        page = rpc(path,'extract',target)
+        u = urlsplit(page['url'])
+        if f'{u.scheme}://{u.netloc}' in origins and (not params.get('successText') or params['successText'] in page['text']) and (not params.get('successUrlIncludes') or params['successUrlIncludes'] in page['url']):
+            return finish('verified',url=page['url'])
+        return finish('step_budget')
+
 
 def schema(properties=None, required=None):
     return {'type':'object','properties':{'session':{'type':'string','description':'Explicit browser session ID; required when multiple sessions exist'},**(properties or {})},'required':required or [],'additionalProperties':False}
@@ -167,6 +268,7 @@ TOOLS = [
     ('forward','Go forward in tab history.',schema(TAB,['tabId'])),
     ('reload','Reload an explicit tab.',schema(TAB,['tabId'])),
     ('suggest','Use one Jev request for a compact, grounded next-action suggestion. Sends visible page text and control names to TypeSafe through qinda. No action is executed.',schema({**TAB,'goal':{'type':'string'},'history':{'type':'array','items':{'type':'string'},'maxItems':4}},['tabId','goal'])),
+    ('run','Delegate a bounded Jev loop without main-model round trips. Executes only exact allowed click names and caller-supplied field values; check task authorization first. Sends visible text/control names to TypeSafe. Requires deterministic success criteria and allowed origins. Stops on ambiguity, low confidence, boundary, or budget.',schema({**TAB,'goal':{'type':'string'},'allowedOrigins':{'type':'array','items':{'type':'string'}},'allowedClickNames':{'type':'array','items':{'type':'string'}},'values':{'type':'object','additionalProperties':{'type':['string','boolean']}},'successText':{'type':'string'},'successUrlIncludes':{'type':'string'},'maxSteps':{'type':'integer','minimum':1,'maximum':12},'maxRequestBytes':{'type':'integer'},'minConfidence':{'type':'number'},'timeoutSeconds':{'type':'integer'}},['tabId','goal','allowedOrigins'])),
 ]
 
 

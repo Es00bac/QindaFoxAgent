@@ -34,7 +34,7 @@ def main():
     parser.add_argument('--binary',default='/opt/qindafox/firefox' if Path('/opt/qindafox/firefox').exists() else shutil.which('firefox'))
     parser.add_argument('--url',default='about:blank')
     args = parser.parse_args()
-    driver = shutil.which('geckodriver')
+    driver = shutil.which('geckodriver') or (str(Path.home()/'.local/bin/geckodriver') if (Path.home()/'.local/bin/geckodriver').exists() else None)
     if not driver or not args.binary:
         parser.error('Install Mozilla geckodriver on PATH and Firefox/QindaFox first')
     xpi = Path(__file__).resolve().parents[1]/'dist/qindafox-agent.xpi'
